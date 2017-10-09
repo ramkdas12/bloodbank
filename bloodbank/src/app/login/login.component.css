@@ -1,0 +1,25 @@
+section {
+  padding-top: 20px;
+}
+
+.noPad {
+  padding: 0;
+}
+
+.padLeft30 {
+  padding-left: 30px;
+}
+
+.align {
+  display: inline-block;
+  vertical-align: baseline;
+  vertical-align: -webkit-baseline-middle;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}

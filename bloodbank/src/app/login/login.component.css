@@ -13,7 +13,6 @@ section {
 .align {
   display: inline-block;
   vertical-align: baseline;
-  vertical-align: -webkit-baseline-middle;
 }
 
 .ng-valid[required], .ng-valid.required  {

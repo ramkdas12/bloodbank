@@ -2,17 +2,39 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { Validators, ValidatorFn } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
+import {DropdownModule} from "ngx-dropdown";
+
 @Component({
-  selector: 'bb-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'bb-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class LoginComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   
-  login = {
+  signup = {
     email: '',
-    password: ''
+    password: '',
+    confPassword: '',
+    name: '',
+    age: '',
+    gender: ''
   }
+  genders = [
+    {
+      "value": "M",
+      "name" : "Male"
+    },
+    {
+      "value": "F",
+      "name" : "Female"
+    },
+    {
+      "value": "T",
+      "name" : "Other"
+    }
+  ]
+
+  
   //pureEmail = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/gi);
   pureEmail = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
   ngOnInit = function() {

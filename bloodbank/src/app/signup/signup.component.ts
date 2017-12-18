@@ -3,13 +3,13 @@ import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { Validators, ValidatorFn } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
 @Component({
-  selector: 'bb-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'bb-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class LoginComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   
-  login = {
+  signup = {
     email: '',
     password: ''
   }

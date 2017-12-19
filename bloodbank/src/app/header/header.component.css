@@ -1,7 +1,13 @@
 h1 {
-  text-align: center;
-  text-shadow: 3px 3px 7px black;
+    text-align: center;
+    text-shadow: 3px 3px 7px black;
 }
+
 header {
   border-bottom: 1px solid black;
+  position: fixed;
+  width: 100%;
+  background: rgb(255, 123, 123);
+  left: 0;
+  height: 10vh;
 }

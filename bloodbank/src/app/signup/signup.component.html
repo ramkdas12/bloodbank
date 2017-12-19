@@ -81,6 +81,20 @@
       </div>
     </div>
     <div class="form-group">
+      <label for="bloodType">Blood Group</label>
+      <select [(ngModel)]="signup.bloodType" name="bloodType" placeholder="Blood Group" required #bloodType="ngModel" class="form-control">
+        <option *ngFor="let x of bloodTypes" [value]="x.value" [selected]="">{{x.value}}</option>
+      </select>
+      <div *ngIf="bloodType.invalid && (bloodType.dirty || bloodType.touched)" class="alert alert-danger">
+        <div *ngIf="bloodType.errors.required">
+          Blood Group is required.
+        </div>
+        <div *ngIf="bloodType.invalid && !(bloodType.errors.required)">
+          Invalid Blood Group.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
       <div class=''>
         <button type="submit" class="btn btn-primary" [disabled]="!signForm.form.valid">Sign up</button>
       </div>

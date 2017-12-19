@@ -17,7 +17,8 @@ export class SignUpComponent implements OnInit {
     confPassword: '',
     name: '',
     age: '',
-    gender: ''
+    gender: '',
+    bloodType: ''
   }
   genders = [
     {
@@ -31,6 +32,26 @@ export class SignUpComponent implements OnInit {
     {
       "value": "T",
       "name" : "Other"
+    }
+  ]
+
+  bloodTypes = [
+    {
+      "value": "A+"
+    },{
+      "value": "A-"
+    },{
+      "value": "B+"
+    },{
+      "value": "B-"
+    },{
+      "value": "AB+"
+    },{
+      "value": "AB-"
+    },{
+      "value": "O-"
+    },{
+      "value": "O-"
     }
   ]
 

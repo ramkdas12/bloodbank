@@ -49,21 +49,36 @@ export class SignUpComponent implements OnInit {
     },{
       "value": "AB-"
     },{
-      "value": "O-"
+      "value": "O+"
     },{
       "value": "O-"
     }
   ]
-
+  pureEmail = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+  config = {
+    "placeholder" : "Email",
+    "required": true,
+    "name": "email",
+    "id": "email",
+    "pattern": this.pureEmail,
+    "class": "form-control",
+    "labelName": "Email address",
+    "type": "email"
+  };
   
   //pureEmail = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/gi);
-  pureEmail = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+ 
   ngOnInit = function() {
     
   }
   onSubmit = function(){
     this.sbumitted = true;
+    console.log(this.signup);
     console.log("FormSubmit");
+  }
+  inputFocus = function(event) {
+    console.log("inputFocus");
+    console.log(event);
   }
 }
 

@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './signup/signup.component';
 import { FooterComponent } from './footer/footer.component';
+import { TextInputComponent } from './components/textInput/textInput.component';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './/app-routing.module';
     HeaderComponent,
     LoginComponent,
     SignUpComponent,
-    FooterComponent
+    FooterComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,54 @@
+{
+  "formConfig": {
+    "email": {
+      "placeholder": "Email",
+      "required": true,
+      "name": "email",
+      "id": "email",
+      "pattern": "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$",
+      "class": "form-control",
+      "labelName": "Email Address",
+      "type": "email"
+    },
+    "password": {
+      "placeholder": "Password",
+      "required": true,
+      "name": "password",
+      "id": "password",
+      "minlength": 6,
+      "class": "form-control",
+      "labelName": "Password",
+      "type": "password"
+    },
+    "confirmPassword": {
+      "placeholder": "Confirm Password",
+      "required": true,
+      "name": "confPassword",
+      "id": "confPassword",
+      "minlength": 6,
+      "class": "form-control",
+      "labelName": "Confirm Password",
+      "type": "password"
+    },
+    "name": {
+      "placeholder": "Name",
+      "required": true,
+      "name": "name",
+      "id": "name",
+      "pattern": "[a-zA-Z][a-zA-Z ]+",
+      "class": "form-control",
+      "labelName": "Name",
+      "type": "text"
+    },
+    "age": {
+      "placeholder": "Age",
+      "required": true,
+      "name": "age",
+      "id": "age",
+      "class": "form-control",
+      "labelName": "Age",
+      "pattern": "[0-9]+",
+      "type": "text"
+    }
+  }
+}

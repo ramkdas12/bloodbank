@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {DropdownModule} from "ngx-dropdown";
+import { DropdownModule } from "ngx-dropdown";
+import { HttpClientModule }    from '@angular/common/http';
 
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -10,7 +11,9 @@ import { FooterComponent } from './footer/footer.component';
 import { TextInputComponent } from './components/textInput/textInput.component';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+import { FormConfigService } from './services/formConfig.service';
+import { HttpClient } from '@angular/common/http/src/client';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,11 @@ import { AppRoutingModule } from './/app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [FormConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

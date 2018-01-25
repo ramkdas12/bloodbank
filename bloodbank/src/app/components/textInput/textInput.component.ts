@@ -11,6 +11,7 @@ export class TextInputComponent implements OnInit {
   
   @Input() config: any;
   @Input() model: string;
+
   @Output() modelChange = new EventEmitter<boolean>();
   @Output() elementFocus = new EventEmitter();
   @Output() elementBlur = new EventEmitter();
@@ -20,6 +21,7 @@ export class TextInputComponent implements OnInit {
   @Output() elementCut = new EventEmitter();
   @Output() elementCopy = new EventEmitter();
   @Output() elementPaste = new EventEmitter();
+  
   ngOnInit = function() {
 
   }

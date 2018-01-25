@@ -1,13 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { Validators, ValidatorFn } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
 import {DropdownModule} from "ngx-dropdown";
+import { Http } from '@angular/http';
+
+import { FormConfigService } from '../services/formConfig.service';
 
 @Component({
   selector: 'bb-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
+  providers: [ FormConfigService ]
 })
 export class SignUpComponent implements OnInit {
   
@@ -20,6 +24,21 @@ export class SignUpComponent implements OnInit {
     gender: '',
     bloodType: ''
   }
+  formData;
+  isDataAvailable = false;
+  form: FormGroup;
+
+  constructor (formConfig: FormConfigService) {
+    formConfig.getFormConfig().subscribe(data => {
+      this.formData = data.formConfig;
+      this.isDataAvailable = true;
+    });
+  }
+
+  ngOnInit() {
+    
+  }
+
   genders = [
     {
       "value": "M",
@@ -54,23 +73,7 @@ export class SignUpComponent implements OnInit {
       "value": "O-"
     }
   ]
-  pureEmail = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
-  config = {
-    "placeholder" : "Email",
-    "required": true,
-    "name": "email",
-    "id": "email",
-    "pattern": this.pureEmail,
-    "class": "form-control",
-    "labelName": "Email address",
-    "type": "email"
-  };
-  
-  //pureEmail = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/gi);
- 
-  ngOnInit = function() {
-    
-  }
+
   onSubmit = function(){
     this.sbumitted = true;
     console.log(this.signup);
@@ -81,12 +84,3 @@ export class SignUpComponent implements OnInit {
     console.log(event);
   }
 }
-
-function emailRegexValidator(nameRe: RegExp): ValidatorFn {
-  return (control: AbstractControl): {[key: string]: any} => {
-    const forbidden = nameRe.test(control.value);
-    console.log(forbidden);
-    return forbidden ? {'email': {value: control.value}} : null;
-  };
-}
-

@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label for="{{config.id}}">Email address</label>
+  <label for="{{config.id}}">{{config.labelName}}</label>
   <input type="{{config.type}}" [(ngModel)]="model" (ngModelChange)="onChange(model)" placeholder="{{config.placeholder}}" 
     required="{{config.required}}" class="{{config.class}}" name="{{config.name}}" id="{{config.id}}"
     pattern="{{config.pattern}}" #element="ngModel" autocomplete="off" (focus)="onFocus($event)" (blur)="onBlur($event)" 

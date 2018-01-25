@@ -35,7 +35,7 @@
       "required": true,
       "name": "name",
       "id": "name",
-      "pattern": "[a-zA-Z0-9 .]+",
+      "pattern": "[a-zA-Z][a-zA-Z ]+",
       "class": "form-control",
       "labelName": "Name",
       "type": "text"

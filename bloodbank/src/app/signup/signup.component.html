@@ -1,71 +1,10 @@
-<section>
+<section *ngIf="isDataAvailable">
   <form #signForm="ngForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="signup.email"
-        placeholder="Enter email" required name="email" id="email" #email="ngModel" email="{{signup.email}}" pattern="{{pureEmail}}">
-      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-        <div *ngIf="email.errors.required">
-          Email is required.
-        </div>
-        <div *ngIf="email.invalid">
-          Invalid email.
-        </div>
-      </div>
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" [(ngModel)]="signup.password" class="form-control" id="password" name="password" placeholder="Password"
-        required minlength="6" #password="ngModel">
-      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-        <div *ngIf="password.errors.required">
-          Password is required.
-        </div>
-        <div *ngIf="password.invalid && !(password.errors.required)">
-          Invalid password.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="confPassword">Confirm password</label>
-      <input type="password" [(ngModel)]="signup.confPassword" class="form-control" id="confPassword" name="confPassword" placeholder="Confirm Password"
-        required minlength="6" #confPassword="ngModel">
-      <div *ngIf="confPassword.invalid && (confPassword.dirty || confPassword.touched)" class="alert alert-danger">
-        <div *ngIf="confPassword.errors.required">
-          Password is required.
-        </div>
-        <div *ngIf="confPassword.invalid && !(confPassword.errors.required)">
-          Invalid password.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" [(ngModel)]="signup.name" class="form-control" id="name" name="name" placeholder="Name" required minlength="6"
-        #name="ngModel">
-      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-        <div *ngIf="name.errors.required">
-          Name is required.
-        </div>
-        <div *ngIf="name.invalid && !(name.errors.required)">
-          Invalid Name.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="age">Age</label>
-      <input type="text" [(ngModel)]="signup.age" class="form-control" id="age" name="age" placeholder="Age" required minlength="6"
-        #age="ngModel">
-      <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
-        <div *ngIf="age.errors.required">
-          Age is required.
-        </div>
-        <div *ngIf="age.invalid && !(age.errors.required)">
-          Invalid age.
-        </div>
-      </div>
-    </div>
+    <bb-textInput [config]="formData.email" [(model)]="signup.email"></bb-textInput>
+    <bb-textInput [config]="formData.password" [(model)]="signup.password"></bb-textInput>
+    <bb-textInput [config]="formData.confirmPassword" [(model)]="signup.confPassword"></bb-textInput>
+    <bb-textInput [config]="formData.name" [(model)]="signup.name"></bb-textInput>
+    <bb-textInput [config]="formData.age" [(model)]="signup.age"></bb-textInput>
     <div class="form-group">
       <label for="gender">Gender</label>
       <select [(ngModel)]="signup.gender" name="gender" placeholder="Gender" required #gender="ngModel" class="form-control">
